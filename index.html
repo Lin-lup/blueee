@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>N · 蓝蝴蝶 · BLUE BUTTERFLY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro-cover" id="intro-cover">
+    <div class="intro-inner">
+      <div class="envelope intro-envelope" id="intro-envelope">
+        <div class="env-flap"></div>
+        <div class="env-letter">
+          <img src="荧光蓝蝶·竖版.jpg" alt="信纸">
+          <div class="env-letter-cap">A LETTER FOR N</div>
+        </div>
+        <div class="env-pocket"></div>
+        <div class="env-seal">✦</div>
+        <div class="env-hint">轻触拆开信封</div>
+      </div>
+      <div class="intro-title">N · BLUE BUTTERFLY</div>
+    </div>
+  </div>
+  <div class="bg-ambience"></div>
+  <div class="bg-gradient-overlay"></div>
+  <img src="白蝶·透明底.png" alt="" class="flying-butterfly" aria-hidden="true">
+  <canvas id="rain-canvas"></canvas>
+  <canvas id="click-canvas"></canvas>
+
+  <div class="app-viewport">
+    <div class="side-watermark side-wm-left">SILENCE WORE A PAIR OF WINGS</div>
+    <div class="side-watermark side-wm-right">ECHOES OF THE INK BLUE</div>
+    <header class="top-header">
+      <div class="header-tag">
+        <span class="header-dot"></span>
+        <span>N. · 常驻 耳正</span>
+      </div>
+      <div class="header-right">
+        <button class="sound-toggle music-toggle" id="music-toggle" title="背景音乐开关（Mehxx.mp3）" aria-label="背景音乐开关">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+          </svg>
+        </button>
+        <button class="sound-toggle" id="sound-toggle" title="雨声环境音开关" aria-label="雨声环境音开关">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3c-3 4-6 6-6 10a6 6 0 0 0 12 0c0-4-3-6-6-10z"></path>
+            <path class="sound-wave wave-1" d="M8.5 14.5a3.5 3.5 0 0 0 2 3"></path>
+            <path class="sound-wave wave-2" d="M15.5 14.5a3.5 3.5 0 0 1-2 3"></path>
+          </svg>
+        </button>
+        <button class="sound-toggle layout-toggle" id="layout-toggle" title="横屏 / 竖屏布局切换" aria-label="横屏 / 竖屏布局切换">
+          <svg viewBox="0 0 24 24">
+            <rect class="lt-rect" x="4" y="2" width="16" height="20" rx="3"></rect>
+            <path class="lt-arrow" d="M9.5 12l5-3.5v7z"></path>
+          </svg>
+        </button>
+        <div class="header-quote">You exist within the boundary I drew.</div>
+      </div>
+    </header>
+
+    <main class="slider-stage" id="slider-stage">
+      <!-- PAGE 0：主页 -->
+      <section class="page-slide active" data-index="0">
+        <div class="hero-visual">
+          <div class="hero-avatar-wrap">
+            <div class="hero-avatar-ring"></div>
+            <div class="avatar-orbit orbit-1">
+              <div class="orbit-butterfly">
+                <img src="白蝶·透明底.png" alt="">
+              </div>
+            </div>
+            <div class="avatar-orbit orbit-2">
+              <div class="orbit-butterfly butterfly-delay">
+                <img src="白蝶·透明底.png" alt="">
+              </div>
+            </div>
+            <div class="avatar-orbit orbit-3">
+              <div class="orbit-butterfly butterfly-small">
+                <img src="白蝶·透明底.png" alt="">
+              </div>
+            </div>
+            <img src="头像.jpg" alt="头像" class="hero-avatar">
+          </div>
+          <h1 class="hero-title">N</h1>
+          <p class="hero-sub">BLUE BUTTERFLY · INK BLUE</p>
+        </div>
+        <div class="glass-box motto-card">
+          “这份尊荣由我予，亦可由我收。”
+          <span class="en-sub">MY SUBMISSION IS A GIFT I GRANT YOU.</span>
+        </div>
+        <div class="glass-box profile-card">
+          <div class="card-caption">PROFILE · 个人档案</div>
+          <div class="profile-meta">
+            05 年 · 男 · 双 ｜ INFP · 双鱼 ｜ 常驻：耳正
+          </div>
+          <div class="profile-details">
+            主风格：辩驳 · brat · 白话微文 · 回合制 · 温柔<br>
+            技能：病恋（小狗文学 · sub1/0 · 伪上 · 平权 · 温病）
+          </div>
+        </div>
+        <div class="tags-row">
+          <span class="tag-badge"># 病恋</span>
+          <span class="tag-badge"># brat</span>
+          <span class="tag-badge"># INFP</span>
+        </div>
+        <div class="links-row">
+          <a class="mf-btn link-pill" href="https://www.kdocs.cn/l/cppLLDAVnSUR" target="_blank" rel="noopener">板评</a>
+          <a class="mf-btn link-pill" href="https://www.kdocs.cn/l/ce5douyADuUe" target="_blank" rel="noopener">话术</a>
+          <a class="mf-btn link-pill" href="https://www.kdocs.cn/l/ctepHfr33vO5" target="_blank" rel="noopener">卡类</a>
+        </div>
+      </section>
+
+      <!-- PAGE 1：风格与心绪 -->
+      <section class="page-slide" data-index="1">
+        <div class="section-head">
+          <h2>风格与心绪</h2>
+          <p>ONCE UPON A BLUE BUTTERFLY</p>
+        </div>
+        <div class="parallax-frame" id="parallax-card">
+          <div class="parallax-inner">
+            <img src="梦核黑胶·风格.jpg" alt="梦核黑胶" class="parallax-banner">
+            <div class="parallax-shine" id="parallax-shine"></div>
+            <div class="parallax-overlay-text">
+              <span>ECHOES OF THE INK BLUE</span>
+            </div>
+          </div>
+        </div>
+        <div class="style-watermark-bg">SUBMISSION AS A GIFT</div>
+        <div class="glass-box tone-list">
+          <div class="tone-item">
+            <div class="tone-header">
+              <span class="tone-name">✦ 主调</span>
+              <span class="tone-tag">核心</span>
+            </div>
+            <div class="aura-meter">
+              <div class="aura-fill aura-warm"></div>
+            </div>
+            <div class="tone-chips">
+              <span class="tone-chip">辩驳</span>
+              <span class="tone-chip">brat</span>
+              <span class="tone-chip">白话微文</span>
+              <span class="tone-chip">回合制</span>
+              <span class="tone-chip">温柔</span>
+            </div>
+          </div>
+          <div class="tone-item">
+            <div class="tone-header">
+              <span class="tone-name">✦ 尾调</span>
+              <span class="tone-tag">余韵</span>
+            </div>
+            <div class="aura-meter">
+              <div class="aura-fill aura-cool"></div>
+            </div>
+            <div class="tone-chips">
+              <span class="tone-chip">病恋</span>
+              <span class="tone-chip">小狗文学</span>
+              <span class="tone-chip">温病</span>
+            </div>
+          </div>
+          <div class="tone-item tone-highlight">
+            <div class="tone-header">
+              <span class="tone-name">✦ 心声</span>
+              <span class="tone-tag">信条</span>
+            </div>
+            <div class="tone-desc confession-text">
+              这份尊荣由我予，亦可由我收。<br>
+              My submission is a gift I grant you.<br>
+              You exist within the boundary I drew.
+            </div>
+          </div>
+          <div class="style-extra-quote">
+            <span class="quote-symbol">“</span>You exist within the boundary I drew.<span class="quote-symbol">”</span>
+          </div>
+        </div>
+        <img src="雨窗单蝶·横幅.jpg" alt="装饰横幅" class="deco-strip">
+      </section>
+
+      <!-- PAGE 2：信封 · 自介 -->
+      <section class="page-slide" data-index="2">
+        <div class="section-head text-center">
+          <h2>信封</h2>
+          <p>THE SEALED LETTER</p>
+        </div>
+        <p class="journey-lead">
+          雨会替你把话绕一圈——拆开这封信，把你的自介写给我。
+        </p>
+
+        <div class="envelope-stage" id="envelope-stage">
+          <div class="envelope" id="envelope">
+            <div class="env-flap"></div>
+            <div class="env-letter">
+              <img src="荧光蓝蝶·竖版.jpg" alt="信纸">
+              <div class="env-letter-cap">A LETTER FOR N</div>
+            </div>
+            <div class="env-pocket"></div>
+            <div class="env-seal">✦</div>
+            <div class="env-hint">轻触拆开信封</div>
+          </div>
+
+          <div class="journey-side">
+            <div class="glass-box meet-form" id="letter-form" style="display:none">
+              <div class="mf-title">₊˚⊹ 在见面之前 还请你写下这些 ʚ˚₊</div>
+
+              <div class="mf-group">
+                <div class="mf-label">风格喜好（可多选）</div>
+                <div class="mf-chips" id="mf-styles">
+                  <span class="mf-chip">病恋</span>
+                  <span class="mf-chip">小狗文学</span>
+                  <span class="mf-chip">辩驳</span>
+                  <span class="mf-chip">brat</span>
+                  <span class="mf-chip">白话微文</span>
+                  <span class="mf-chip">回合制</span>
+                  <span class="mf-chip">温柔</span>
+                  <span class="mf-chip">伪上</span>
+                  <span class="mf-chip">平权</span>
+                  <span class="mf-chip">温病</span>
+                </div>
+              </div>
+
+              <div class="mf-grid">
+                <label class="mf-field">称呼<input type="text" id="mf-call" placeholder="怎么称呼你"></label>
+                <label class="mf-field">性别<input type="text" id="mf-gender" placeholder="你的性别"></label>
+                <label class="mf-field">喜好<input type="text" id="mf-like" placeholder="喜欢什么"></label>
+                <label class="mf-field">雷点<input type="text" id="mf-hate" placeholder="雷到什么"></label>
+              </div>
+
+              <div class="mf-group">
+                <div class="mf-label">想约的时长</div>
+                <div class="mf-chips mf-single" id="mf-length">
+                  <span class="mf-chip">30min</span>
+                  <span class="mf-chip">60min</span>
+                </div>
+              </div>
+
+              <div class="mf-group">
+                <div class="mf-label">是否新手板</div>
+                <div class="mf-chips mf-single" id="mf-newbie">
+                  <span class="mf-chip">是</span>
+                  <span class="mf-chip">否</span>
+                </div>
+              </div>
+
+              <label class="mf-field mf-note-field">备注<textarea id="mf-note" rows="2" placeholder="其他想对我说的话…"></textarea></label>
+
+              <button class="mf-done" id="mf-done">✦ 封 缄 这 封 信 ✦</button>
+            </div>
+
+            <div class="glass-box mf-summary" id="mf-summary" style="display:none">
+              <div class="mf-sum-head">✦ 你的自介信 · 已送达 ✦</div>
+              <div class="mf-sum-body" id="mf-sum-body"></div>
+              <div class="mf-sum-foot">YOU EXIST WITHIN THE BOUNDARY I DREW · N</div>
+              <div class="mf-sum-actions">
+                <button class="mf-btn" id="mf-edit">返回修改</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-footer">
+          <span class="footer-line"></span>
+          <span class="footer-text">BETWEEN BLACK AND INK BLUE · 黑与墨蓝之间</span>
+          <span class="footer-line"></span>
+        </div>
+      </section>
+
+      <!-- PAGE 3：须知 -->
+      <section class="page-slide" data-index="3">
+        <div class="section-head">
+          <h2>点单须知</h2>
+          <p>NOTICE BEFORE WE MEET</p>
+        </div>
+        <p class="notice-lead">
+          为了我们都有一场愉悦的相处体验，请在见面前后读完以下守则——尊重是互相的。
+        </p>
+        <img src="墨蓝夜浪·深色.jpg" alt="装饰横幅" class="deco-strip">
+        <div class="glass-box notice-rules">
+          <div class="rule-item">
+            <div class="rule-icon">01</div>
+            <div class="rule-content">
+              <div class="rule-label">关于点单</div>
+              <div class="rule-body">
+                婉拒 le / 匿名点单 / 黄豆抽象行为，否则点单视为送单。
+              </div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">02</div>
+            <div class="rule-content">
+              <div class="rule-label">关于期待</div>
+              <div class="rule-body">
+                我不是天赋型选手，请不要对我抱有太大期待；也请提前填好喜雷表，我不想因为失误让你失去对本次见面的耐心。
+              </div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">03</div>
+            <div class="rule-content">
+              <div class="rule-label">关于相处</div>
+              <div class="rule-body">
+                见面开始，便是你我之间关系的开始。请勿提及与本次相处无关或涉三的内容，出戏尬场概不负责。
+              </div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">04</div>
+            <div class="rule-content">
+              <div class="rule-label">关于时间</div>
+              <div class="rule-body">
+                你有一定的时间决定我的去留：30min 内 5 分钟可换人，60min 内 10 分钟可换人。禁止卡点换人，超时换人我会收取一定费用。
+              </div>
+            </div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-icon">05</div>
+            <div class="rule-content">
+              <div class="rule-label">关于尊重</div>
+              <div class="rule-body">
+                婉拒恶搞行为 / 披马甲一直挑刺 / 单内录屏截图。称呼我为 N，尊重是互相的。
+              </div>
+            </div>
+          </div>
+          <div class="safe-word-card">
+            <div class="safe-word-title">安全词 · SAFE WORD</div>
+            <div class="safe-word-content">「南」</div>
+          </div>
+          <div class="bottom-trust-note">
+            相处期间如有不适，请直接说出安全词，我会立刻停下来。
+          </div>
+          <div class="notice-bottom-en">
+            <span>MY SUBMISSION IS A GIFT I GRANT YOU · YOU EXIST WITHIN THE BOUNDARY I DREW</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="scroll-hint" id="scroll-hint">
+      <span>SWIPE</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+
+    <nav class="dock-nav">
+      <button class="dock-btn active" onclick="goToSlide(0)">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>主页</span>
+      </button>
+      <button class="dock-btn" onclick="goToSlide(1)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+        <span>风格</span>
+      </button>
+      <button class="dock-btn" onclick="goToSlide(2)">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="2 6 12 13 22 6"></polyline></svg>
+        <span>信封</span>
+      </button>
+      <button class="dock-btn" onclick="goToSlide(3)">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>须知</span>
+      </button>
+    </nav>
+  </div>
+
+  <audio id="bg-music" src="Mehxx.mp3" loop preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
